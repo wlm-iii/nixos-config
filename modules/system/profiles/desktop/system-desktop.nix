@@ -8,6 +8,7 @@
     [
       system-cli
       hyprland
+      greetd
 
     ];
   };

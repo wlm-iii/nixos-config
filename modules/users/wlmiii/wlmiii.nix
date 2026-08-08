@@ -8,9 +8,6 @@
     (self.factory.user "wlmiii" true)
     {
       nixos.wlmiii = {
-        imports = with self.modules.nixos; [
-            system-desktop
-        ];
         users.users.wlmiii = {
           description = "Liam McCarthy";
           group = "audio";
@@ -21,17 +18,9 @@
         };
       };
 
-      homeManager.wlmiii =
-        { pkgs, ... }:
-        {
-          imports = with self.modules.homeManager; [
-            # system-desktop
-          ];
-
-          home.packages = with pkgs; [
-          ];
-          programs.home-manager.enable = true;
-        };
+      homeManager.wlmiii = {
+        programs.home-manager.enable = true;
+      };
     }
   ];
 }

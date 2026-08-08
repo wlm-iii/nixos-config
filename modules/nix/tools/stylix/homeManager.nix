@@ -7,6 +7,7 @@
       };
       firefox.enable = false;
       btop.enable = false;
+      tmux.enable = false;
     };
   };
 }

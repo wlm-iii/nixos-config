@@ -1,60 +1,62 @@
-{ 
-  inputs, ...
+{
+  inputs,
+  ...
 }:
 {
-  flake.modules.nixos.stylix = { pkgs, ... }: {
-    imports = [
-      inputs.stylix.nixosModules.stylix
-      (
-        { pkgs, ... }:
-        {
-          stylix = {
-            enable = true;
+  flake.modules.nixos.stylix =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      imports = [
+        inputs.stylix.nixosModules.stylix
+      ];
 
-            image = ./assets/bohmer.jpg;
+      stylix = {
+        enable = true;
 
-            polarity = "dark";
+        image = ./assets/bohmer.jpg;
 
-            base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+        polarity = "dark";
 
-            fonts = {
-              serif = {
-                package = pkgs.noto-fonts;
-                name = "Noto Serif";
-              };
-              sansSerif = {
-                package = pkgs.noto-fonts;
-                name = "Noto Sans";
-              };
-              monospace = {
-                package = pkgs.nerd-fonts.jetbrains-mono;
-                name = "JetBrainsMono Nerd Font";
-              };
-              emoji = {
-                package = pkgs.noto-fonts-color-emoji;
-                name = "Noto Color Emoji";
-              };
-            };
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
 
-            cursor = {
-              package = pkgs.bibata-cursors;
-              name = "Bibata-Modern-Classic";
-              size = 20;
-            };
-
-            targets = {
-              grub = {
-                enable = true;
-                useWallpaper = false;
-              };
-            };
+        fonts = {
+          serif = {
+            package = pkgs.noto-fonts;
+            name = "Noto Serif";
           };
+          sansSerif = {
+            package = pkgs.noto-fonts;
+            name = "Noto Sans";
+          };
+          monospace = {
+            package = pkgs.nerd-fonts.jetbrains-mono;
+            name = "JetBrainsMono Nerd Font";
+          };
+          emoji = {
+            package = pkgs.noto-fonts-color-emoji;
+            name = "Noto Color Emoji";
+          };
+        };
 
-          fonts.packages = with pkgs; [
-            nerd-fonts.jetbrains-mono
-          ];
-        }
-      )
-    ];
-  };
+        cursor = {
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Classic";
+          size = 20;
+        };
+
+        targets = {
+          grub = {
+            enable = true;
+            useWallpaper = false;
+          };
+        };
+      };
+
+      fonts.packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
+      ];
+    };
 }
