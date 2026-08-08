@@ -8,6 +8,21 @@
     [
       system-minimal
       home-manager
+
+      archive
+      base-packages
+      clang
+      efibootmgr
+      firmware
+      gcc
+      gdb
+      git
+      grub
+      kernel
+      networkmanager
+      ssh
+      tmux
+      vim
     ];
   };
 
@@ -15,6 +30,8 @@
     imports = with inputs.self.modules.homeManager;
     [
       system-minimal
+
+      git
     ];
   };
 }
