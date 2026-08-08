@@ -1,0 +1,16 @@
+-- Monitors for Praxis
+
+-- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+hl.monitor({
+    output   = "eDP-1",
+    mode     = "preferred",
+    position = "auto",
+    scale    = 1.175,
+})
+
+hl.monitor({
+    output   = "",
+    mode     = "preferred",
+    position = "auto-up",
+    scale    = "auto",
+})

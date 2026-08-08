@@ -1,0 +1,151 @@
+/* Gruvbox palette (dark/medium) */
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color bg2 #504945;
+@define-color fg0 #ebdbb2;
+@define-color fg1 #d5c4a1;
+@define-color gray #928374;
+
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color orange #d65d0e;
+
+* {
+	border: solid;
+	border-radius: 4px;
+	min-height: 0px;
+	font-family: "JetBrains Mono Nerd Font", "Noto Sans", sans-serif, monospace;
+	font-size: 14px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+window#waybar {
+	background: alpha(@bg0, 0.80);
+	color: @fg0;
+	transition-property: background-color;
+	transition-duration: .5s;
+	border: solid;
+	border-radius: 4px;
+	padding: 2px 2px;
+	box-shadow:
+		0 4px 3px alpha(@bg0, 0.85),
+		0 6px 12px alpha(@bg0, 0.35);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background: transparent;
+}
+
+.modules-left {
+	margin-right: 0px;
+}
+
+.modules-center {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.modules-right {
+	margin-left: 0px;
+}
+
+#custom-launcher,
+#pulseaudio,
+#pulseaudio\#mic,
+#network,
+#tray,
+#bluetooth,
+#battery,
+#clock,
+#hyprland-window {
+	padding: 0 6px;
+}
+
+#workspaces button {
+	padding: 0 7px;
+	margin: 3px 2px;
+	border-radius: 0px;
+	color: @fg1;
+	background: transparent;
+}
+
+#workspaces button.active {
+	color: @orange;
+}
+
+#workspaces button.urgent {
+	color: @red;
+}
+
+#pulseaudio {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#tray {
+	background: transparent;
+	border-radius: 2px;
+}
+
+#power-profiles-daemon {
+	padding-right: 4px;
+}
+
+#battery.warning {
+	color: @yellow;
+}
+
+#battery.critical {
+	color: @red;
+}
+
+#network.disconnected {
+	color: @red;
+}
+
+/* #group-power { */
+/* 	padding-left: 0px; */
+/* 	padding-right: 2px; */
+/* } */
+/**/
+/* .power-hidden { */
+/* 	color: @fg0; */
+/* } */
+/**/
+/* #custom-power { */
+/* 	color: @fg0; */
+/* } */
+/**/
+/* #custom-reboot { */
+/* 	color: @orange; */
+/* } */
+/**/
+/* #custom-lock { */
+/* 	color: @aqua; */
+/* } */
+/**/
+/* #custom-logout { */
+/* 	color: @gray; */
+/* } */
+
+/* Hide the center window-title pill on an empty workspace */
+window#waybar.empty .modules-center {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+window#waybar.empty #window {
+	padding: 0;
+	margin: 0;
+}

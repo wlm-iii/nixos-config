@@ -7,6 +7,7 @@
     imports = with inputs.self.modules.nixos; 
     [
       system-cli
+      hyprland
 
     ];
   };
@@ -15,6 +16,8 @@
     imports = with inputs.self.modules.homeManager; 
     [
       system-cli
+      hyprland
+      waybar
 
     ];
   };
