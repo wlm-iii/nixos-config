@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.rustup = {
-    home.packages = with pkgs; [
-      rustup
-    ];
-  };
+  flake.modules.homeManager.rustup =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        rustup
+      ];
+    };
 }

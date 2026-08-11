@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.nixos.keymapp = {
-    environment.systemPackages = with pkgs; [
-      keymapp
-    ];
-  };
+  flake.modules.nixos.keymapp =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        keymapp
+      ];
+    };
 }

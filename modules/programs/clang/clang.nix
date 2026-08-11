@@ -1,12 +1,13 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.nixos.clang = {
-    environment.systemPackages = with pkgs; [
-      clang
-      clang-tools
-    ];
-  };
+  flake.modules.nixos.clang =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        clang
+        clang-tools
+      ];
+    };
 }

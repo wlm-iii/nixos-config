@@ -9,7 +9,7 @@
       programs.hyprland.enable = true;
 
       # Custom API for making implementation with tuigreet modular
-      local.login.command = lib.mkDefault "Hyprland";
+      local.login.command = lib.mkDefault "start-hyprland";
 
       security.pam.services.hyprlock.fprintAuth = true;
 

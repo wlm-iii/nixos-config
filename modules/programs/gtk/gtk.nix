@@ -1,16 +1,17 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.gtk = {
-    gtk = {
-      enable = true;
+  flake.modules.homeManager.gtk =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      gtk = {
+        enable = true;
 
-      iconTheme = {
-        package = pkgs.gruvbox-plus-icons;
-        name = "Gruvbox-Plus-Dark";
+        iconTheme = {
+          package = pkgs.gruvbox-plus-icons;
+          name = "Gruvbox-Plus-Dark";
+        };
       };
     };
-  };
 }

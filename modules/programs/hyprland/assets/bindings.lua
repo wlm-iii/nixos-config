@@ -4,7 +4,8 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(programs.terminal))
 hl.bind(mainMod .. " + CTRL + RETURN", hl.dsp.exec_cmd(programs.terminal2))
-hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("kitty --hold fastfetch"))
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("ghostty -e sh -c 'fastfetch; exec \"$SHELL\"'"))
+-- hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("kitty --hold fastfetch"))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 closeWindowBind:set_enabled(true)
 hl.bind(mainMod .. " + SHIFT + Q",

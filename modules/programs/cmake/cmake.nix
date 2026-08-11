@@ -1,12 +1,13 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.cmake = {
-    home.packages = with pkgs; [
-      cmake
-      ninja
-    ];
-  };
+  flake.modules.homeManager.cmake =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        cmake
+        ninja
+      ];
+    };
 }

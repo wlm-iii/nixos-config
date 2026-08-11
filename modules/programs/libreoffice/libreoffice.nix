@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.libreoffice = {
-    home.packages = with pkgs; [
-      libreoffice-qt
-    ];
-  };
+  flake.modules.homeManager.libreoffice =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        libreoffice-qt
+      ];
+    };
 }

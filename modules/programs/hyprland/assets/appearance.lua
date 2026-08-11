@@ -77,7 +77,7 @@ hl.config({
             font_family = "JetBrains Mono Nerd Font",
             font_size = 14,
             -- height = 16,
-            height = 8,
+            height = 4,
             gradients = true,
             stacked = false,
             render_titles = false,

@@ -1,14 +1,15 @@
-{ 
-  pkgs, 
-  ... 
-}:
 {
-  flake.modules.nixos.archive = {
-    environment.systemPackages = with pkgs; [
-      zip
-      unzip
-      gnutar
-      gzip
-    ];
-  };
+  flake.modules.nixos.archive =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        zip
+        unzip
+        gnutar
+        gzip
+      ];
+    };
 }

@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.nixos.gdb = {
-    environment.systemPackages = with pkgs; [
-      gdb
-    ];
-  };
+  flake.modules.nixos.gdb =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        gdb
+      ];
+    };
 }

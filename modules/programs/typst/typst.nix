@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.typst = {
-    home.packages = with pkgs; [
-      typst
-    ];
-  };
+  flake.modules.homeManager.typst =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        typst
+      ];
+    };
 }

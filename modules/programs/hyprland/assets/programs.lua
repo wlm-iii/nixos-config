@@ -1,8 +1,8 @@
 -- Programs used by bindings.
 
 return {
-    terminal = "kitty",
-    terminal2 = "ghostty",
+    terminal = "ghostty",
+    terminal2 = "kitty",
     fileManager = "dolphin",
     menu = "rofi",
     browser = "firefox",

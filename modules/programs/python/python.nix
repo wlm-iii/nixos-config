@@ -1,11 +1,12 @@
-{ 
-  pkgs, 
-  ... 
-}: 
 {
-  flake.modules.homeManager.python = {
-    home.packages = with pkgs; [
-      python314
-    ];
-  };
+  flake.modules.homeManager.python =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        python314
+      ];
+    };
 }

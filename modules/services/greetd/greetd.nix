@@ -19,12 +19,15 @@
           settings = {
             default_session = {
               user = "greeter";
-              command = "${pkgs.tuigreet}/bin/tuigreet \
-            --time \
-            --remember \
-            --remember-session \
-            --cmd ${lib.escapeShellArg config.local.login.command}";
-              # Custom API to make graphical environment modular
+              command = lib.concatStringsSep " " [
+                "${pkgs.tuigreet}/bin/tuigreet "
+                "--time"
+                "--remember"
+                "--remember-session"
+                "--cmd"
+                (lib.escapeShellArg config.local.login.command)
+                # Custom API to make graphical environment modular
+              ];
             };
           };
         };

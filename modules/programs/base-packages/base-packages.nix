@@ -1,14 +1,15 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.nixos.base-packages = {
-    environment.systemPackages = with pkgs; [
-      curl
-      wget
-      file
-      tree
-    ];
-  };
+  flake.modules.nixos.base-packages =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        curl
+        file
+        tree
+        wget
+      ];
+    };
 }

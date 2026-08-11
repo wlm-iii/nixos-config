@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.xonotic = {
-    home.packages = with pkgs; [
-      xonotic
-    ];
-  };
+  flake.modules.homeManager.xonotic =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        xonotic
+      ];
+    };
 }

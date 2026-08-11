@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.nixos.efibootmgr = {
-    environment.systemPackages = with pkgs; [
-      efibootmgr
-    ];
-  };
+  flake.modules.nixos.efibootmgr =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        efibootmgr
+      ];
+    };
 }

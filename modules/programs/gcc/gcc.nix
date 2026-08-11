@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.nixos.gcc = {
-    environment.systemPackages = with pkgs; [
-      gcc
-    ];
-  };
+  flake.modules.nixos.gcc =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        gcc
+      ];
+    };
 }

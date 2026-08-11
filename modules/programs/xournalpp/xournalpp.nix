@@ -1,11 +1,12 @@
 {
-  pkgs,
-  ...
-}:
-{
-  flake.modules.homeManager.xournalpp = {
-    home.packages = with pkgs; [
-      xournalpp
-    ];
-  };
+  flake.modules.homeManager.xournalpp =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        xournalpp
+      ];
+    };
 }
