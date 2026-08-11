@@ -28,6 +28,7 @@
       neovim
       python
       rustup
+      lazygit
       shell
       terminal-toys
       tmux

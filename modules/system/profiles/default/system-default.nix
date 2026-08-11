@@ -19,7 +19,9 @@
       git
       grub
       kernel
+      locale
       networkmanager
+      nix-ld
       ssh
       tmux
       vim

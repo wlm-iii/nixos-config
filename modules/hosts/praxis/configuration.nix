@@ -7,12 +7,19 @@
   flake.modules.nixos.praxis = {
     imports = with inputs.self.modules.nixos; [
       system-desktop
+
+      fprintd
+      keyd
+      keymapp
+      zsa
     ];
 
     home-manager.users.wlmiii.imports = [
       inputs.self.modules.homeManager.praxis
     ];
 
-    programs.nh.flake = "${config.users.users.wlmiii.home}/Projects/dendritic-nix";
+    networking.hostName = "praxis";
+
+    programs.nh.flake = "${config.users.users.wlmiii.home}/nixos-config";
   };
 }
