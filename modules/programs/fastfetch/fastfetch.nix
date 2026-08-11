@@ -41,6 +41,12 @@
             key = "Title";
             format = "{user-name}";
           }
+          {
+            type = "title";
+            keyIcon = "󰪫";
+            key = "Title";
+            format = "{host-name}";
+          }
           "os"
           "kernel"
           "wm"
