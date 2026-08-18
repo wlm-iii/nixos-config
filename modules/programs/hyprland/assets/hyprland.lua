@@ -3,8 +3,8 @@
 
 require("monitors")
 require("programs")
-require("autostart")
 require("environment")
+require("autostart")
 require("permissions")
 require("appearance")
 require("input")
