@@ -23,7 +23,6 @@
 
       btop
       cmake
-      codex
       fastfetch
       neovim
       python

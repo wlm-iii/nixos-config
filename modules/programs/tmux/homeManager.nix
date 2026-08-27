@@ -53,6 +53,8 @@
           set -g renumber-windows on
           set -g set-clipboard on
           set -g base-index 1
+          set -g extended-keys on
+          set -g extended-keys-format csi-u
           bind | split-window -h -c "#{pane_current_path}"
           bind - split-window -v -c "#{pane_current_path}"
         '';
