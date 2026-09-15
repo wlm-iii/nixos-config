@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.praxis =
+  flake.modules.nixos.argentum =
     {
       config,
       lib,

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.homeManager.praxis = {
+  flake.modules.homeManager.argentum = {
     xdg.configFile."hypr/monitors.lua".source = ./assets/hyprland-monitors.lua;
 
     imports = with inputs.self.modules.homeManager; [

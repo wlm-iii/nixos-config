@@ -1,4 +1,4 @@
--- Monitors for Praxis
+-- Monitors for Argentum
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.nixos.praxis =
+  flake.modules.nixos.argentum =
     {
       config,
       ...
@@ -19,10 +19,10 @@
       ];
 
       home-manager.users.wlmiii.imports = [
-        inputs.self.modules.homeManager.praxis
+        inputs.self.modules.homeManager.argentum
       ];
 
-      networking.hostName = "praxis";
+      networking.hostName = "argentum";
 
       programs.nh.flake = "${config.users.users.wlmiii.home}/nixos-config";
     };
