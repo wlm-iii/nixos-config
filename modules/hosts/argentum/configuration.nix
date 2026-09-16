@@ -25,5 +25,7 @@
       networking.hostName = "argentum";
 
       programs.nh.flake = "${config.users.users.wlmiii.home}/nixos-config";
+
+      system.stateVersion = "25.11";
     };
 }
