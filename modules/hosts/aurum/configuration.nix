@@ -23,5 +23,7 @@
       networking.hostName = "aurum";
 
       programs.nh.flake = "${config.users.users.wlmiii.home}/nixos-config";
+
+      system.stateVersion = "26.05";
     };
 }
