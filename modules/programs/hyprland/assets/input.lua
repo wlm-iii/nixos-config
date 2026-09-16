@@ -28,6 +28,13 @@ hl.device({
     sensitivity = -0.5,
 })
 
+hl.config({
+    misc = {
+        key_press_enables_dpms = true,
+        mouse_move_enables_dpms = true,
+    },
+})
+
 return {
     toggle_while_typing = function()
         while_typing = not while_typing
