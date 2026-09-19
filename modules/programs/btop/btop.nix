@@ -2,11 +2,12 @@
   flake.modules = {
     nixos.btop =
       {
+        lib,
         pkgs,
         ...
       }:
       {
-        security.wrappers.btop = {
+        security.wrappers.btop = lib.mkDefault {
           setuid = false;
           source = "${pkgs.btop}/bin/btop";
           owner = "root";

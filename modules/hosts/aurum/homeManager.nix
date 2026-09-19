@@ -12,5 +12,12 @@
       codex
       pi-agent
     ];
+
+    programs.btop = {
+      settings = {
+        shown_boxes = "cpu mem net proc gpu0";
+        custom_gpu_name0 = "RTX 3070 Ti";
+      };
+    };
   };
 }

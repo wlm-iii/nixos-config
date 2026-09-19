@@ -6,6 +6,7 @@
   flake.modules.nixos.aurum =
     {
       config,
+      pkgs,
       ...
     }:
     {
@@ -23,6 +24,14 @@
       networking.hostName = "aurum";
 
       programs.nh.flake = "${config.users.users.wlmiii.home}/nixos-config";
+
+      security.wrappers.btop = {
+        setuid = false;
+        source = "${pkgs.btop.override { cudaSupport = true; }}/bin/btop";
+        owner = "root";
+        group = "root";
+        capabilities = "CAP_PERFMON=+ep";
+      };
 
       system.stateVersion = "26.05";
     };
