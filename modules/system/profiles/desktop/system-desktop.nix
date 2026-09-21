@@ -12,6 +12,7 @@
       bluetooth
       dconf
       disk
+      gamescope
       greetd
       hyprland
       localsend

@@ -14,3 +14,7 @@ hl.monitor({
     position = "auto-left",
     scale    = "auto",
 })
+
+hl.on("hyprland.start", function()
+    hl.exec_cmd("xrandr --output DP-1 --primary")
+end)
