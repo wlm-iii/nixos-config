@@ -16,6 +16,7 @@
       greetd
       hyprland
       localsend
+      openconnect
       pipewire
       polkit
       power
@@ -41,6 +42,7 @@
       libreoffice
       mullvad-browser
       pdf-utils
+      prismlauncher
       qt
       rofi
       thunderbird
