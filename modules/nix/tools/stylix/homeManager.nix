@@ -2,7 +2,7 @@
   flake.modules.homeManager.stylix = {
     stylix.targets = {
       qt = {
-        enable = true;
+        enable = false;
         standardDialogs = "xdgdesktopportal";
       };
       firefox.enable = false;

@@ -55,6 +55,7 @@
             enable = true;
             useWallpaper = false;
           };
+          qt.enable = false;
         };
       };
 
