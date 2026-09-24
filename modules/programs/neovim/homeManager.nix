@@ -28,6 +28,7 @@
       pyright
       tinymist
       gnumake
+      websocat
     ];
     
     xdg.configFile.nvim.source = inputs.nvim-config;
