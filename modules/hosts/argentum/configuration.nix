@@ -15,6 +15,7 @@
         fprintd
         keyd
         keymapp
+        tailscale
         zsa
       ];
 

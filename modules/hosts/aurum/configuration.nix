@@ -14,6 +14,8 @@
         system-desktop
 
         nvidia
+        openssh
+        tailscale
         zsa
       ];
 
