@@ -35,7 +35,7 @@
         qt6ctSettings = qtctSettings;
 
         kde.settings = {
-          dolphinrc.UiSettings.ColorScheme = null;
+          dolphinrc.UiSettings.ColorScheme = "BreezeDark";
           kdeglobals = {
             Icons.Theme = "Gruvbox-Plus-Dark";
             KDE.widgetStyle = "kvantum";
