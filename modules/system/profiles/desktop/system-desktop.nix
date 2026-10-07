@@ -32,6 +32,7 @@
       system-cli
 
       discord
+      discordo
       dolphin
       firefox
       ghostty
