@@ -18,7 +18,7 @@
           opener = {
             zathura = [
               {
-                run = "${pkgs.zathura}/bin/zathura \"$1\"";
+                run = "${pkgs.zathura}/bin/zathura %s1";
                 orphan = true;
                 desc = "Zathura";
                 for = "linux";
@@ -27,7 +27,7 @@
 
             xournalpp = [
               {
-                run = "${pkgs.xournalpp}/bin/xournalpp \"$1\"";
+                run = "${pkgs.xournalpp}/bin/xournalpp %s1";
                 orphan = true;
                 desc = "Xournal++";
                 for = "linux";
@@ -36,7 +36,7 @@
 
             edit = [
               {
-                run = "${pkgs.neovim}/bin/nvim \"$@\"";
+                run = "${pkgs.neovim}/bin/nvim %s";
                 block = true;
                 desc = "Neovim";
                 for = "linux";
@@ -45,7 +45,7 @@
 
             open = [
               {
-                run = "${pkgs.xdg-utils}/bin/xdg-open \"$1\"";
+                run = "${pkgs.xdg-utils}/bin/xdg-open %s1";
                 orphan = true;
                 desc = "Open";
                 for = "linux";
