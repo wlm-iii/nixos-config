@@ -13,6 +13,8 @@
       imports = with inputs.self.modules.nixos; [
         system-desktop
 
+        keyd
+        keymapp
         nvidia
         openssh
         tailscale
