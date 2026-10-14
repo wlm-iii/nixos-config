@@ -17,17 +17,19 @@
     };
 
     home.packages = with pkgs; [
-      tree-sitter
-      lua-language-server
-      nil
-      ripgrep
-      fzf
-      gcc
       clang-tools
       fd
-      pyright
-      tinymist
+      fzf
+      gcc
       gnumake
+      lua-language-server
+      nil
+      nixd
+      nixfmt
+      pyright
+      ripgrep
+      tinymist
+      tree-sitter
       websocat
     ];
     
