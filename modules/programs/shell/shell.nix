@@ -13,7 +13,7 @@
         sessionVariables = {
           EDITOR = "nvim";
           BROWSER = "firefox";
-          TERMINAL = "kitty";
+          TERMINAL = "ghostty";
         };
         initContent = ''
           fpath+=(${pkgs.pure-prompt}/share/zsh/site-functions)
