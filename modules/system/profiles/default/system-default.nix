@@ -20,6 +20,7 @@
       grub
       kernel
       locale
+      man
       networkmanager
       nix-ld
       ssh
