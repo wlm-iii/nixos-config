@@ -9,6 +9,7 @@
         window-decoration = "server";
         shell-integration-features = "ssh-env,ssh-terminfo,title";
         window-padding-balance = true;
+        adjust-cell-height = "-10%";
       };
     };
   };
