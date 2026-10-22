@@ -30,5 +30,6 @@
 
       system.stateVersion = "25.11";
 
+      stylix.image = ./assets/autumn_painting.jpg;
     };
 }

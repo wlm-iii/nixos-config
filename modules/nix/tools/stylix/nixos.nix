@@ -5,6 +5,7 @@
 {
   flake.modules.nixos.stylix =
     {
+      lib,
       pkgs,
       ...
     }:
@@ -16,7 +17,7 @@
       stylix = {
         enable = true;
 
-        image = ./assets/bohmer.jpg;
+        image = lib.mkDefault ./assets/nixos.png;
 
         polarity = "dark";
 

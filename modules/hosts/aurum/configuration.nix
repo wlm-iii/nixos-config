@@ -37,6 +37,8 @@
         capabilities = "CAP_PERFMON=+ep";
       };
 
+      stylix.image = ./assets/autumn_mountains_painting.jpg;
+
       system.stateVersion = "26.05";
     };
 }
