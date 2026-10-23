@@ -45,6 +45,8 @@
           };
         };
 
+        opacity.terminal = 0.90;
+
         cursor = {
           package = pkgs.bibata-cursors;
           name = "Bibata-Modern-Classic";

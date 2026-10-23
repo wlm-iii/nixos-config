@@ -28,9 +28,15 @@ hl.window_rule({
     float = true,
 })
 
+hl.layer_rule({
+    name = "blur rofi",
+    match = { namespace = "rofi" },
+    blur = true,
+})
+
 hl.window_rule({ name = "disable animations in fullscreen", match = { fullscreen = true }, no_anim = true })
 hl.window_rule({ name = "make kitty translucent", match = { class = "kitty" }, opacity = .9 })
-hl.window_rule({ name = "make ghostty translucent", match = { class = "com.mitchellh.ghostty" }, opacity = .9 })
+-- hl.window_rule({ name = "make ghostty translucent", match = { class = "com.mitchellh.ghostty" }, opacity = .9 })
 hl.layer_rule({ name = "blur waybar", match = { namespace = "waybar" }, blur = true })
 
 hl.config({

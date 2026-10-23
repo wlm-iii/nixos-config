@@ -22,6 +22,7 @@
         settings = {
           color_theme = "TTY";
           vim_keys = true;
+          theme_background = false;
         };
       };
     };
