@@ -21,6 +21,16 @@
         "hypr/bindings.lua".source = ./assets/bindings.lua;
         "hypr/rules.lua".source = ./assets/rules.lua;
 
+        "hypr/hypr_switch_workspace.sh" = {
+          source = ./assets/hypr_switch_workspace.sh;
+          executable = true;
+        };
+
+        "hypr/hypr_move_to_workspace.sh" = {
+          source = ./assets/hypr_move_to_workspace.sh;
+          executable = true;
+        };
+
         # The generic fallback; a host may override this later.
         "hypr/monitors.lua".source = lib.mkDefault ./assets/monitors.lua;
       };
