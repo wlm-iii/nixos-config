@@ -105,6 +105,21 @@
       home.packages = with pkgs; [
         libqalculate
         gruvbox-plus-icons
+        networkmanager_dmenu
+        rofi-bluetooth
       ];
+
+      xdg.configFile."networkmanager-dmenu/config.ini".source =
+        (pkgs.formats.ini { }).generate "networkmanager-dmenu.ini"
+          {
+            dmenu = {
+              dmenu_command = "rofi -dmenu -i";
+            };
+
+            editor = {
+              gui_if_available = true;
+              gui = "nm-connection-editor";
+            };
+          };
     };
 }

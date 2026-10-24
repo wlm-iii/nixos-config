@@ -29,15 +29,39 @@ hl.window_rule({
 })
 
 hl.layer_rule({
+    name = "blur waybar",
+    match = { namespace = "waybar" },
+    blur = true,
+})
+
+hl.layer_rule({
     name = "blur rofi",
     match = { namespace = "rofi" },
     blur = true,
 })
 
+hl.window_rule({
+    name = "audio panel",
+    match = {
+        class = "^$",
+        title = "^Volume Control$",
+    },
+    float = true,
+    size = { 640, 480 },
+    move = { "monitor_w-window_w-8", 42 },
+})
+
+hl.window_rule({
+    name = "network panel",
+    match = { class = "^nm-connection-editor$" },
+    float = true,
+    size = { 560, 420 },
+    move = { "monitor_w-window_w-8", 42 },
+})
+
 hl.window_rule({ name = "disable animations in fullscreen", match = { fullscreen = true }, no_anim = true })
 hl.window_rule({ name = "make kitty translucent", match = { class = "kitty" }, opacity = .9 })
 -- hl.window_rule({ name = "make ghostty translucent", match = { class = "com.mitchellh.ghostty" }, opacity = .9 })
-hl.layer_rule({ name = "blur waybar", match = { namespace = "waybar" }, blur = true })
 
 hl.config({
     xwayland = {

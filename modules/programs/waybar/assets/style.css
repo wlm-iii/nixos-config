@@ -56,20 +56,14 @@ window#waybar {
 	margin-left: 0px;
 }
 
-#custom-launcher,
-#pulseaudio,
-#pulseaudio\#mic,
-#network,
-#tray,
 #bluetooth,
-#battery,
 #clock,
 #hyprland-window {
-	padding: 0 6px;
+	padding: 0 4px;
 }
 
 #workspaces button {
-	padding: 0 7px;
+	padding: 0 2px;
 	margin: 3px 2px;
 	border-radius: 0px;
 	color: @fg1;
@@ -84,19 +78,28 @@ window#waybar {
 	color: @red;
 }
 
-#pulseaudio {
-	padding-left: 4px;
-	padding-right: 4px;
-}
-
 #tray {
 	background: transparent;
-	border-radius: 2px;
+	/* border-radius: 2px; */
 }
 
-#power-profiles-daemon {
-	padding-right: 4px;
+#custom-tray-toggle {
+   /* padding: 0 4px; */
+   color: @fg0;
 }
+
+box#tray:hover #custom-tray-toggle {
+   color: @orange;
+}
+
+box#tray:hover #tray {
+    padding: 0 4px;
+}
+
+/* #power-profiles-daemon { */
+/* 	padding-left: 2px; */
+/* 	padding-right: 2px; */
+/* } */
 
 #battery.warning {
 	color: @yellow;
@@ -136,16 +139,30 @@ window#waybar {
 /* } */
 
 /* Hide the center window-title pill on an empty workspace */
-window#waybar.empty .modules-center {
-	background: transparent;
-	border: none;
-	box-shadow: none;
-	padding: 0;
-	margin-left: 0;
-	margin-right: 0;
-}
+/* window#waybar.empty .modules-center { */
+/* 	background: transparent; */
+/* 	border: none; */
+/* 	box-shadow: none; */
+/* 	padding: 0; */
+/* 	margin-left: 0; */
+/* 	margin-right: 0; */
+/* } */
 
 window#waybar.empty #window {
 	padding: 0;
 	margin: 0;
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#power-profiles-daemon,
+#custom-tray-toggle,
+#battery,
+#custom-launcher,
+#pulseaudio.mic {
+   font-family: "JetBrainsMono Nerd Font Propo";
+   font-size: 14px;
+   min-width: 14px;
+   padding: 0 4px;
 }
