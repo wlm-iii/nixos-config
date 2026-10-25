@@ -10,6 +10,7 @@
       accounts-daemon
       blueman
       bluetooth
+      brave
       dconf
       disk
       gamescope
