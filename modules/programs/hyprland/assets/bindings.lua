@@ -13,7 +13,6 @@ hl.bind(mainMod .. " + SHIFT + Q",
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(programs.fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(programs.browser .. " -P \"School\""))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(programs.browser .. " -P \"Personal\""))
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("keepassxc"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(programs.menu .. " -show drun"))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("networkmanager_dmenu"))
@@ -45,8 +44,8 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down", grou
 local resizeStep = 36
 hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ x = -resizeStep, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = resizeStep, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0, y = resizeStep, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0, y = -resizeStep, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0, y = -resizeStep, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0, y = resizeStep, relative = true }), { repeating = true })
 
 hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.group.lock())
@@ -64,8 +63,31 @@ end
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.window.move({ workspace = "special:magic" }))
-hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("pwman"))
+
+hl.bind(mainMod .. " + X", function()
+    hl.dispatch(hl.dsp.workspace.toggle_special("pwman"))
+    hl.exec_cmd(
+        'pgrep -u "$(id -u)" -x keepassxc >/dev/null || keepassxc'
+    )
+end)
 hl.bind(mainMod .. " + CTRL + X", hl.dsp.window.move({ workspace = "special:pwman" }))
+
+hl.bind(mainMod .. " + T", function()
+    hl.dispatch(hl.dsp.workspace.toggle_special("email"))
+    hl.exec_cmd(
+        'pgrep -u "$(id -u)" -x thunderbird >/dev/null || thunderbird'
+    )
+end)
+hl.bind(mainMod .. " + CTRL + T", hl.dsp.window.move({ workspace = "special:email" }))
+
+hl.bind(mainMod .. " + D", function()
+    hl.dispatch(hl.dsp.workspace.toggle_special("discord"))
+    hl.exec_cmd(
+        'pgrep -u "$(id -u)" -x vesktop >/dev/null || vesktop'
+    )
+end)
+hl.bind(mainMod .. " + CTRL + D", hl.dsp.window.move({ workspace = "special:discord" }))
+
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -91,4 +113,4 @@ hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | wl-copy"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | swappy -f -"))
 hl.bind(mainMod .. "+ I", input.toggle_while_typing)
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("$HOME/.config/hypr/hypr_switch_workspace.sh"))
-hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("$HOME/.config/hypr/hypr_move_to_workspace.sh"))
+hl.bind(mainMod .. " + CTRL + TAB", hl.dsp.exec_cmd("$HOME/.config/hypr/hypr_move_to_workspace.sh"))
