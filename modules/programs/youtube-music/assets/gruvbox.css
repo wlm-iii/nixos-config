@@ -1,0 +1,274 @@
+/*
+ * Stylix / Base16 theme for Pear Desktop / YouTube Music (Gruvbox Dark).
+ * Home Manager substitutes the palette and font placeholders at build time.
+ * Orange (base09) and olive green (base0B) are the primary accents.
+ * Import the Home Manager symlink, not its resolved /nix/store path:
+ *   ~/.config/YouTube Music/themes/gruvbox.css
+ * Restart Pear after rebuilding to reload CSS. YouTube DOM changes may require
+ * selector updates. Disable other themes and Album Color Theme if they conflict.
+ *
+ * Optional desktop transparency: enable Pear's Transparent Player plugin,
+ * set its opacity to around 80-90%, and restart. CSS cannot make an opaque
+ * Electron window transparent. Compositor support is required; CSS backdrop
+ * blur only blurs web content, not the desktop behind the window.
+ */
+
+:root,
+html[dark],
+ytmusic-app {
+  color-scheme: dark;
+
+  --gb-bg: @base00@;
+  --gb-bg-soft: color-mix(in srgb, var(--gb-bg), var(--gb-bg1));
+  --gb-bg1: @base01@;
+  --gb-bg2: @base02@;
+  --gb-disabled: @base03@;
+  --gb-fg: @base05@;
+  --gb-muted: @base04@;
+  --gb-yellow: @base0A@;
+  --gb-orange: @base09@;
+  --gb-green: @base0B@;
+  --gb-red: @base08@;
+  --gb-aqua: @base0C@;
+  --gb-font: @monospaceFont@, monospace;
+
+  --ytmusic-color-black1: var(--gb-bg) !important;
+  --ytmusic-color-black2: var(--gb-bg-soft) !important;
+  --ytmusic-color-black3: var(--gb-bg1) !important;
+  --ytmusic-color-black4: var(--gb-bg2) !important;
+  --ytmusic-color-blackpure: var(--gb-bg) !important;
+  --ytmusic-color-grey1: var(--gb-muted) !important;
+  --ytmusic-color-grey2: var(--gb-muted) !important;
+  --ytmusic-color-grey3: var(--gb-disabled) !important;
+  --ytmusic-color-grey4: var(--gb-disabled) !important;
+  --ytmusic-color-grey5: var(--gb-bg2) !important;
+  --ytmusic-color-white1: var(--gb-fg) !important;
+  --ytmusic-color-white2: var(--gb-muted) !important;
+  --ytmusic-color-white3: var(--gb-muted) !important;
+  --ytmusic-color-red1: var(--gb-orange) !important;
+  --ytmusic-color-red2: var(--gb-red) !important;
+  --ytmusic-color-blue1: var(--gb-aqua) !important;
+  --ytmusic-background: var(--gb-bg) !important;
+  --ytmusic-brand-background-solid: var(--gb-bg) !important;
+  --ytmusic-brand-background: var(--gb-bg) !important;
+  --ytmusic-general-background-a: var(--gb-bg) !important;
+  --ytmusic-general-background-b: var(--gb-bg1) !important;
+  --ytmusic-general-background-c: var(--gb-bg2) !important;
+  --ytmusic-text-primary: var(--gb-fg) !important;
+  --ytmusic-text-secondary: var(--gb-muted) !important;
+  --ytmusic-text-disabled: var(--gb-disabled) !important;
+  --ytmusic-search-background: var(--gb-bg1) !important;
+
+  --yt-spec-base-background: var(--gb-bg) !important;
+  --yt-spec-raised-background: var(--gb-bg1) !important;
+  --yt-spec-menu-background: var(--gb-bg1) !important;
+  --yt-spec-text-primary: var(--gb-fg) !important;
+  --yt-spec-text-secondary: var(--gb-muted) !important;
+  --yt-spec-text-disabled: var(--gb-disabled) !important;
+  --yt-spec-call-to-action: var(--gb-green) !important;
+  --yt-spec-icon-active-other: var(--gb-fg) !important;
+  --yt-spec-icon-inactive: var(--gb-muted) !important;
+  --yt-spec-badge-chip-background: var(--gb-bg1) !important;
+  --yt-spec-10-percent-layer: color-mix(in srgb, var(--gb-fg) 10%, transparent) !important;
+
+  /* Recolor Pear's transparency plugin, but retain its opacity setting. */
+  --ytmd-transparent-player-transparency-color: var(--gb-bg) !important;
+}
+
+body {
+  background-color: var(--gb-bg) !important;
+  color: var(--gb-fg);
+  font-family: var(--gb-font);
+}
+
+/* Only remove the root canvas when Pear enables native transparency. */
+html:has(body.transparent-background-color) {
+  background: transparent !important;
+}
+
+ytmusic-app,
+ytmusic-app-layout,
+#layout,
+#player-page,
+#browse-page,
+#content.ytmusic-app,
+ytmusic-browse-response,
+ytmusic-library-page,
+ytmusic-section-list-renderer,
+ytmusic-tabbed-search-results-renderer {
+  background: transparent !important;
+}
+
+/* Library/playlist/album pages paint their own canvas and artwork gradients.
+ * The app-level variables above override YouTube's locally defined palette.
+ * Clear only decorative background layers, leaving cover images/videos intact.
+ * The body provides Gruvbox, or the Transparent Player plugin's tinted canvas.
+ */
+#browse-page #background,
+ytmusic-browse-response > #background {
+  display: none !important;
+}
+
+ytmusic-browse-response .background-gradient,
+.background-gradient.ytmusic-browse-response {
+  background: none !important;
+}
+
+/*
+ * Target text components, NOT `*`, all spans, buttons, or pseudo-elements.
+ * Icon fonts keep their own font-family; SVG/iron-icon/yt-icon are untouched.
+ * Exclude actual icon elements/classes, not every class containing "icon":
+ * button containers use names such as --icon-leading but also contain labels.
+ * Do not reset icon fonts to `inherit`.
+ */
+:is(
+  yt-formatted-string,
+  .yt-core-attributed-string,
+  .yt-core-attributed-string__link,
+  .yt-spec-button-shape-next__button-text-content,
+  .yt-spec-dialog-layout__title,
+  .yt-spec-dialog-layout__dialog,
+  tp-yt-paper-tooltip,
+  input,
+  textarea,
+  h1,
+  h2,
+  h3,
+  p,
+  .time-info.ytmusic-player-bar,
+  .title.ytmusic-player-bar,
+  .byline.ytmusic-player-bar
+):not(
+  :is(
+    .icon,
+    .material-icons,
+    .material-icons-outlined,
+    .material-icons-round,
+    .material-icons-sharp,
+    .material-icons-two-tone,
+    [class*="material-symbol"],
+    .yt-spec-button-shape-next__icon,
+    yt-icon,
+    iron-icon,
+    svg
+  ),
+  :is(
+    .icon,
+    .material-icons,
+    .material-icons-outlined,
+    .material-icons-round,
+    .material-icons-sharp,
+    .material-icons-two-tone,
+    [class*="material-symbol"],
+    .yt-spec-button-shape-next__icon,
+    yt-icon,
+    iron-icon,
+    svg
+  ) *
+) {
+  font-family: var(--gb-font) !important;
+}
+
+/* Translucent surfaces, not whole-window opacity: text/art stay crisp. */
+#nav-bar-background,
+#player-bar-background,
+#mini-guide-background,
+#guide-wrapper,
+nav[data-ytmd-main-panel] {
+  background-color: color-mix(in srgb, var(--gb-bg) 90%, transparent) !important;
+  border-color: var(--gb-bg2) !important;
+}
+
+ytmusic-player-bar {
+  background: transparent !important;
+  color: var(--gb-fg) !important;
+}
+
+ytmusic-search-box {
+  --ytmusic-search-background: var(--gb-bg1) !important;
+}
+
+/* Sticky Library / Downloads (and search) tabs have a separate black backing. */
+ytmusic-tabs,
+ytmusic-tabs.stuck,
+#browse-page #tabs,
+#search-page #tabs {
+  background: color-mix(in srgb, var(--gb-bg) 90%, transparent) !important;
+  backdrop-filter: blur(8px);
+  --paper-tabs-selection-bar-color: var(--gb-orange) !important;
+}
+
+ytmusic-tabs tp-yt-paper-tabs {
+  background: transparent !important;
+  --paper-tabs-selection-bar-color: var(--gb-orange) !important;
+}
+
+/* Menus stay opaque so text remains readable over album covers. */
+ytmusic-menu-popup-renderer,
+yt-confirm-dialog-renderer,
+tp-yt-paper-dialog {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-fg) !important;
+  border: 1px solid var(--gb-bg2);
+  border-radius: 12px;
+}
+
+/* Orange seek bar, olive volume controls. */
+#progress-bar.ytmusic-player-bar,
+.volume-slider.ytmusic-player-bar,
+.expand-volume-slider.ytmusic-player-bar {
+  --gb-slider-accent: var(--gb-orange);
+  --paper-slider-active-color: var(--gb-slider-accent) !important;
+  --paper-slider-knob-color: var(--gb-slider-accent) !important;
+  --paper-slider-knob-start-color: var(--gb-slider-accent) !important;
+  --paper-slider-container-color: var(--gb-bg2) !important;
+  --paper-slider-secondary-color: var(--gb-muted) !important;
+}
+
+.volume-slider.ytmusic-player-bar,
+.expand-volume-slider.ytmusic-player-bar {
+  --gb-slider-accent: var(--gb-green);
+}
+
+yt-page-navigation-progress {
+  --yt-page-navigation-container-color: var(--gb-bg1) !important;
+  --yt-page-navigation-progress-color: var(--gb-green) !important;
+}
+
+ytmusic-responsive-list-item-renderer:hover,
+ytmusic-player-queue-item:hover,
+ytmusic-guide-entry-renderer:hover {
+  background-color: color-mix(in srgb, var(--gb-green) 10%, transparent) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--gb-muted) !important;
+}
+
+::selection {
+  background-color: var(--gb-green);
+  color: var(--gb-bg);
+}
+
+:focus-visible {
+  outline-color: var(--gb-orange);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gb-bg2);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gb-orange);
+}
