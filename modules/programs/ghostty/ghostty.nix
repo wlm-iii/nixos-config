@@ -11,6 +11,7 @@
         window-padding-balance = true;
         adjust-cell-height = "-10%";
         window-inherit-working-directory = false;
+        quit-after-last-window-closed = false;
       };
     };
   };
