@@ -24,6 +24,7 @@
       btop
       cmake
       fastfetch
+      gh
       neovim
       python
       rustup
