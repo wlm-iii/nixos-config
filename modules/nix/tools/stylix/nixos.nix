@@ -58,6 +58,7 @@
             enable = true;
             useWallpaper = false;
           };
+          chromium.enable = false;
           qt.enable = false;
         };
       };

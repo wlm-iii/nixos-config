@@ -32,6 +32,7 @@
     imports = with inputs.self.modules.homeManager; [
       system-cli
 
+      brave
       discord
       discordo
       dolphin
