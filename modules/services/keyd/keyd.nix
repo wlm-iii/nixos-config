@@ -9,10 +9,9 @@
             capslock = "esc";
             esc = "capslock";
             leftalt = "layer(extension)";
-            rightalt = "leftalt";
             rightshift = "rightshift";
           };
-          extension = {
+          "extension:A" = {
             h = "left";
             j = "down";
             k = "up";

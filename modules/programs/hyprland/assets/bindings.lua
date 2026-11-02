@@ -1,6 +1,7 @@
 local programs = require("programs")
 local input = require("input")
 local mainMod = "SUPER"
+local altMod = "ALT"
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(programs.terminal .. " +new-window"))
 hl.bind(mainMod .. " + CTRL + RETURN", hl.dsp.exec_cmd(programs.terminal2))
@@ -56,13 +57,16 @@ hl.bind(mainMod .. " + SHIFT + left", hl.dsp.group.move_window({ forward = false
 
 for i = 1, 10 do
     local key = i % 10
-    hl.bind(mainMod .. " + " .. key, hl.dsp.group.active({ index = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + CTRL + " .. key, hl.dsp.window.move({ workspace = i }))
+    -- hl.bind(mainMod .. " + " .. key, hl.dsp.group.active({ index = i }))
+    hl.bind(altMod .. " + " .. key, hl.dsp.group.active({ index = i }))
+    -- hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+    -- hl.bind(mainMod .. " + CTRL + " .. key, hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + CTRL + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 hl.bind(mainMod .. " + X", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("pwman"))
@@ -70,7 +74,7 @@ hl.bind(mainMod .. " + X", function()
         'pgrep -u "$(id -u)" -x keepassxc >/dev/null || keepassxc'
     )
 end)
-hl.bind(mainMod .. " + CTRL + X", hl.dsp.window.move({ workspace = "special:pwman" }))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:pwman" }))
 
 hl.bind(mainMod .. " + T", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("email"))
@@ -78,7 +82,7 @@ hl.bind(mainMod .. " + T", function()
         'pgrep -u "$(id -u)" -x thunderbird >/dev/null || thunderbird'
     )
 end)
-hl.bind(mainMod .. " + CTRL + T", hl.dsp.window.move({ workspace = "special:email" }))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.window.move({ workspace = "special:email" }))
 
 hl.bind(mainMod .. " + D", function()
     hl.dispatch(hl.dsp.workspace.toggle_special("discord"))
@@ -86,7 +90,7 @@ hl.bind(mainMod .. " + D", function()
         'pgrep -u "$(id -u)" -x vesktop >/dev/null || vesktop'
     )
 end)
-hl.bind(mainMod .. " + CTRL + D", hl.dsp.window.move({ workspace = "special:discord" }))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "special:discord" }))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -113,4 +117,4 @@ hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | wl-copy"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | swappy -f -"))
 hl.bind(mainMod .. "+ I", input.toggle_while_typing)
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("$HOME/.config/hypr/hypr_switch_workspace.sh"))
-hl.bind(mainMod .. " + CTRL + TAB", hl.dsp.exec_cmd("$HOME/.config/hypr/hypr_move_to_workspace.sh"))
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("$HOME/.config/hypr/hypr_move_to_workspace.sh"))
