@@ -1,7 +1,15 @@
 {
-  flake.modules.homeManager.prismlauncher = {
-    programs.prismlauncher = {
-      enable = true;
+  flake.modules.homeManager.prismlauncher =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      programs.prismlauncher = {
+        enable = true;
+        extraPackages = with pkgs; [
+          openjdk21
+        ];
+      };
     };
-  };
 }

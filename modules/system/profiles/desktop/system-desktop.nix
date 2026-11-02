@@ -10,6 +10,7 @@
       accounts-daemon
       blueman
       bluetooth
+      bottles
       brave
       dconf
       disk
