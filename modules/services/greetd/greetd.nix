@@ -16,6 +16,7 @@
       config = lib.mkIf (config.local.login.command != null) {
         services.greetd = {
           enable = true;
+          useTextGreeter = true;
           settings = {
             default_session = {
               user = "greeter";
