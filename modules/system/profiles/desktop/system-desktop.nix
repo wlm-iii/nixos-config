@@ -17,6 +17,7 @@
       gamescope
       greetd
       hyprland
+      keepassxc
       localsend
       openconnect
       pipewire
