@@ -35,6 +35,7 @@
       system-cli
 
       brave
+      chatgpt
       discord
       discordo
       dolphin
