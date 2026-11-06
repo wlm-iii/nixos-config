@@ -5,13 +5,14 @@
       enableZshIntegration = true;
       systemd.enable = true;
       settings = {
-        font-size = 14;
-        window-decoration = "server";
-        shell-integration-features = "ssh-env,ssh-terminfo,title";
-        window-padding-balance = true;
         adjust-cell-height = "-10%";
-        window-inherit-working-directory = false;
+        background-blur = true;
+        font-size = 14;
         quit-after-last-window-closed = false;
+        shell-integration-features = "ssh-env,ssh-terminfo,title";
+        window-decoration = "server";
+        window-inherit-working-directory = false;
+        window-padding-balance = true;
       };
     };
   };
