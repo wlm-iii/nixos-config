@@ -62,6 +62,7 @@ hl.config({
             noise = 0.03,
             vibrancy = 0.1696,
             ignore_opacity = true,
+            xray = true,
         },
     },
     animations = { enabled = true },
