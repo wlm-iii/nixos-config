@@ -9,9 +9,23 @@
         enable = true;
         shellWrapperName = "y";
 
+        plugins = with pkgs.yaziPlugins; {
+          inherit mount;
+        };
+
         extraPackages = with pkgs; [
           file
+          udisks
+          util-linux
           xdg-utils
+        ];
+
+        keymap.mgr.prepend_keymap = [
+          {
+            on = "M";
+            run = "plugin mount";
+            desc = "Manage disks and mounts";
+          }
         ];
 
         settings = {
