@@ -34,6 +34,7 @@
     imports = with inputs.self.modules.homeManager; [
       system-cli
 
+      blanket
       brave
       chatgpt
       discord
