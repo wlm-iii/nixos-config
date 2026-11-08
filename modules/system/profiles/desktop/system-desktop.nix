@@ -47,6 +47,7 @@
       keepassxc
       kitty
       libreoffice
+      mgba
       mullvad-browser
       pdf-utils
       prismlauncher
