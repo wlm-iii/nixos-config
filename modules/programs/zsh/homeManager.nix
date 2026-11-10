@@ -17,12 +17,23 @@
         };
         initContent = ''
           fpath+=(${pkgs.pure-prompt}/share/zsh/site-functions)
-          autoload -U promptinit
-          promptinit
-          prompt pure
+
+          prompt_pure_precustom() {
+            if [[ -n $IN_NIX_SHELL ]]; then
+              psvar[20]=$'\uf313'
+              prompt_pure_colors[virtualenv]=cyan
+            else
+              prompt_pure_colors[virtualenv]=242
+            fi
+          }
+
+          autoload -Uz prompt_pure_setup
+          prompt_pure_setup
+          zstyle :prompt:pure:environment:nix-shell symbol $'\uf313'
         '';
         shellAliases = {
           nv = "nvim";
+          ff = "fastfetch";
         };
       };
 
