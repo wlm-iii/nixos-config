@@ -38,6 +38,7 @@ hl.layer_rule({
     name = "blur rofi",
     match = { namespace = "rofi" },
     blur = true,
+    ignore_alpha = 0.5,
 })
 
 hl.window_rule({
