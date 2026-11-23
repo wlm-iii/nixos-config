@@ -17,6 +17,7 @@
         keymapp
         nvidia
         openssh
+        syncthing
         tailscale
         zsa
       ];
@@ -38,6 +39,15 @@
       };
 
       stylix.image = ./assets/autumn_mountains_painting.jpg;
+
+      services.syncthing.settings = {
+        devices.argentum = {
+          id = "MTNTJFH-GACYYI6-KY4GSJD-G3VHAFY-6I7G4Y2-H3RWCWE-HEBWIB6-EEAY2AC";
+          addresses = [ "tcp://argentum:22000" ];
+        };
+
+        folders.personal-sync.devices = [ "argentum" ];
+      };
 
       system.stateVersion = "26.05";
     };
