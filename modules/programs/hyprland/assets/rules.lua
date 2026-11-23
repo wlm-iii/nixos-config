@@ -61,6 +61,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "float-keepassxc-access-request",
+    match = {
+        initial_class = [[^org\.keepassxc\.KeePassXC$]],
+        initial_title = "^KeePassXC - +Access Request$",
+    },
+    float = true,
+})
+
+hl.window_rule({
     name = "disable animations in fullscreen",
     match = { fullscreen = true },
     no_anim = true
