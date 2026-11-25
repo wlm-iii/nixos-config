@@ -34,6 +34,7 @@
       tmux
       typst
       yazi
+      zoxide
     ];
   };
 }
