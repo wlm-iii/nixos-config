@@ -74,5 +74,10 @@
           }
         ];
       };
+
+      programs.zsh.shellAliases = {
+        tm = "tmux";
+        tma = "tmux attach";
+      };
     };
 }

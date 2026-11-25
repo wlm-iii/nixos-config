@@ -31,10 +31,6 @@
           prompt_pure_setup
           zstyle :prompt:pure:environment:nix-shell symbol $'\uf313'
         '';
-        shellAliases = {
-          nv = "nvim";
-          ff = "fastfetch";
-        };
       };
 
       home.packages = with pkgs; [
