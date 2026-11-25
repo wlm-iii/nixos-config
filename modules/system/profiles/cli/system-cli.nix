@@ -21,6 +21,7 @@
       system-default
       stylix
 
+      bat
       btop
       cmake
       fastfetch
