@@ -24,6 +24,7 @@
       bat
       btop
       cmake
+      eza
       fastfetch
       gh
       neovim
