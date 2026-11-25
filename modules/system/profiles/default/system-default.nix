@@ -17,6 +17,7 @@
       gcc
       gdb
       git
+      gpg
       grub
       kernel
       locale
@@ -35,6 +36,7 @@
       system-minimal
 
       git
+      gpg
     ];
   };
 }
