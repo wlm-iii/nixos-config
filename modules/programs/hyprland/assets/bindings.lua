@@ -26,7 +26,8 @@ hl.bind(mainMod .. " + Z", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client --toggle-panel --skip-wait"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar || waybar"))
 
-hl.bind(mainMod .. " + SHIFT + M", function()
+hl.bind(mainMod .. "+ A", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + A", function()
     hl.timer(function()
         hl.dispatch(hl.dsp.dpms({ action = "disable" }))
     end, { timeout = 500, type = "oneshot" })
@@ -91,6 +92,7 @@ hl.bind(mainMod .. " + D", function()
     )
 end)
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "special:discord" }))
+
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
