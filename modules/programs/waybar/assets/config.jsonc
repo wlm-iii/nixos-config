@@ -64,14 +64,6 @@
     "align": 0.5,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
   },
-  // "network": {
-  //         "interval": 5,
-  //         "format-wifi": "{essid} {signalStrength}%",
-  //         "format-ethernet": "{ifname} ",
-  //         "format-disconnected": "Disconnected ",
-  //         "tooltip-format": "{ipaddr}/{cidr}",
-  //         "on-click": "pgrep -x nm-connection-editor >/dev/null || nm-connection-editor"
-  // },
   "network": {
     "interval": 5,
     "format-wifi": "{icon}",
@@ -82,7 +74,6 @@
     "tooltip-format-wifi": "{essid} {signalStrength}%",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected ",
-    // "on-click": "pgrep -x nm-connection-editor >/dev/null || nm-connection-editor"
     "on-click": "networkmanager_dmenu"
   },
   "custom/tray-toggle": {
@@ -161,43 +152,7 @@
   "clock": {
     "interval": 30,
     "format": "{:%I:%M %p - %a %b %d }",
-    //"format": "{:%I:%M %p - %B %d, %Y}",
-    // "format": "{:%a %b %d  %H:%M}",
     "format-alt": "{:%Y-%m-%d}",
     "tooltip-format": "{:%Y-%m-%d}"
   }
-  // "group/power": {
-  //         "orientation": "inherit",
-  //         "drawer": {
-  //                 "transition-duration": 250,
-  //                 "children-class": "power-hidden",
-  //                 "transition-left-to-right": false
-  //         },
-  //         "modules": [
-  //                 "custom/power",
-  //                 "custom/lock",
-  //                 "custom/reboot",
-  //                 "custom/logout"
-  //         ]
-  // },
-  // "custom/power": {
-  //         "format": " ",
-  //         "tooltip": "Power off",
-  //         "on-click": "systemctl poweroff"
-  // },
-  // "custom/lock": {
-  //         "format": "󰍁 ",
-  //         "tooltip": "Lock",
-  //         "on-click": "hyprlock"
-  // },
-  // "custom/reboot": {
-  //         "format": "󰜉 ",
-  //         "tooltip": "Reboot",
-  //         "on-click": "systemctl reboot"
-  // },
-  // "custom/logout": {
-  //         "format": "󰗼 ",
-  //         "tooltip": "Exit Hyprland",
-  //         "on-click": "hyprctl dispatch exit"
-  // }
 }
